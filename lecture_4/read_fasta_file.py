@@ -23,6 +23,7 @@ def read_fasta(filename):
     fasta_file.close()
     return sequences
 
+
 fasta_filename = '3IZ0.fasta.txt'
 all_sequences = read_fasta(fasta_filename)
 
