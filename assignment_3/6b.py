@@ -22,14 +22,14 @@ def binomial_coefficients(max_n):
     return binom
 
 
-# Calculate binomial coefficients up to n = 10
-max_n = 10
+# Calculate binomial coefficients up to n = 20
+max_n = 20
 binom = binomial_coefficients(max_n)
 
 # Print Pascals triangle nicely, although not requested
 for n in range(0, max_n):
     string = ""
     for k in range(0, n+1):
-        string += str(binom[n][k]) + "   "  # One row of space delimited values
-    print("{: ^80s}".format(string))        # Centered within 80 columns of the terminal
+        string += "{:6d}".format(binom[n][k])  # One row of space delimited values
+    print("{: ^140s}".format(string))          # Centered within 80 columns of the terminal
 
