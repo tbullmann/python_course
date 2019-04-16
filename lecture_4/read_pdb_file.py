@@ -1,5 +1,5 @@
 """
-Reading a PDB file
+Reading a PDB file and print atom coordinates
 """
 
 file = open("1PQS.pdb", "r")
