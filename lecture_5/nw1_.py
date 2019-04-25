@@ -73,12 +73,12 @@ def print_alignment(i,j,align1, align2, alignm):
             align2 = seq2[i-1] + align2
             alignm = ' ' + alignm
             print_alignment(i - 1, j, align1, align2, alignm)
-        if values[i-1][j-1] + score(seq1[j-1], seq2[i-1]) == values[i][j]:
+        elif values[i-1][j-1] + score(seq1[j-1], seq2[i-1]) == values[i][j]:
             align1 = seq1[j-1] + align1
             align2 = seq2[i-1] + align2
             alignm = ('|' if seq1[j-1] == seq2[i-1] else '*') + alignm
             print_alignment(i - 1, j - 1, align1, align2, alignm)
-        if values[i][j-1] + gap_penalty == values[i][j]:
+        elif values[i][j-1] + gap_penalty == values[i][j]:
             align1 = seq1[j-1] + align1
             align2 = '-' + align2
             alignm = ' ' + alignm

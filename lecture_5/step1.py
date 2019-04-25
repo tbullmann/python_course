@@ -12,12 +12,10 @@ def init(m, n):
 
 
 def show(values, m, n):
-    print()
     for i in range(n):
         for j in range(m):
             print("{:4d}".format(values[i][j]), end='')
         print()
-    print()
 
 values = init(m,n)
 show(values, m, n)

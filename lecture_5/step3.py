@@ -11,13 +11,10 @@ class matrix():
 
 
     def show(self):
-        print()
         for i in range(self.n):
             for j in range(self.m):
                 print("{:4d}".format(self.values[i][j]), end='')
             print()
-        print()
-        return ""
 
 
 class alignement(matrix):
