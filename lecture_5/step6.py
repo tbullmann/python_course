@@ -54,7 +54,6 @@ class needlemann_wunsch(alignement):
 
     def traceback(self):
         self.print_alignment(self.n-1, self.m-1,'','','')
-        print("--")
 
     def print_alignment(self, i, j, align1, align2, alignm):
         if i == 0 and j == 0:
@@ -62,16 +61,16 @@ class needlemann_wunsch(alignement):
             print(alignm)
             print(align2)
         else:
-            if self.values[i - 1][j] + self.gap_penalty == self.values[i][j]:
+            if self.values[i - 1][j - 1] + self.score(self.seq1[i - 1], self.seq2[j - 1]) == self.values[i][j]:
+                align1 = self.seq1[i - 1] + align1
+                align2 = self.seq2[j - 1] + align2
+                alignm = ('|' if seq1[i - 1] == seq2[j - 1] else '*') + alignm
+                self.print_alignment(i - 1, j - 1, align1, align2, alignm)
+            elif self.values[i - 1][j] + self.gap_penalty == self.values[i][j]:
                 align1 = '-' + align1
                 align2 = self.seq1[j - 1] + align2
                 alignm = ' ' + alignm
                 self.print_alignment(i - 1, j, align1, align2, alignm)
-            elif self.values[i - 1][j - 1] + self.score(self.seq1[i - 1], self.seq2[j - 1]) == self.values[i][j]:
-                align1 = self.seq1[i - 1] + align1
-                align2 = self.seq2[j - 1] + align2
-                alignm = ('|' if seq1[j - 1] == seq2[i - 1] else '*') + alignm
-                self.print_alignment(i - 1, j - 1, align1, align2, alignm)
             elif self.values[i][j - 1] + self.gap_penalty == self.values[i][j]:
                 align1 = self.seq1[i - 1] + align1
                 align2 = '-' + align2
