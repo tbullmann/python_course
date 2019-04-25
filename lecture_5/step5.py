@@ -4,9 +4,9 @@ seq2 = "STERNWARTE"
 
 
 class matrix():
-    def __init__(self, m, n):
-        self.m = m
+    def __init__(self, n, m):
         self.n = n
+        self.m = m
         self.values = list(list(0 for x in range(self.m)) for x in range(self.n))
 
 

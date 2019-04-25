@@ -1,6 +1,6 @@
 
 seq1 = "BIERGARTEN"
-seq2 = "STERNWARTEN"
+seq2 = "STERNWARTE"
 
 
 class matrix():

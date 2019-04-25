@@ -6,9 +6,9 @@ m = len(seq1)+1
 n = len(seq2)+1
 
 class matrix():
-    def __init__(self, m, n):
-        self.m = m
-        self.n = n
+    def __init__(self, n, m):
+        self.m = n
+        self.n = m
         self.values = list(list(0 for x in range(self.m)) for x in range(self.n))
 
 
