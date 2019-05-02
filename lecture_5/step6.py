@@ -24,6 +24,8 @@ class alignement(matrix):
     def __init__(self, seq1, seq2):
         self.seq1 = seq1
         self.seq2 = seq2
+        print(seq1)
+        print(seq2)
         matrix.__init__(self, len(seq1) + 1, len(seq2) + 1)
 
 
@@ -67,13 +69,13 @@ class needlemann_wunsch(alignement):
                 alignm = ('|' if seq1[i - 1] == seq2[j - 1] else '*') + alignm
                 self.print_alignment(i - 1, j - 1, align1, align2, alignm)
             elif self.values[i - 1][j] + self.gap_penalty == self.values[i][j]:
-                align1 = '-' + align1
-                align2 = self.seq1[j - 1] + align2
+                align1 = self.seq1[i - 1] + align1
+                align2 = '-' + align2
                 alignm = ' ' + alignm
                 self.print_alignment(i - 1, j, align1, align2, alignm)
             elif self.values[i][j - 1] + self.gap_penalty == self.values[i][j]:
-                align1 = self.seq1[i - 1] + align1
-                align2 = '-' + align2
+                align1 = '-' + align1
+                align2 = self.seq2[j - 1] + align2
                 alignm = ' ' + alignm
                 self.print_alignment(i, j - 1, align1, align2, alignm)
 
