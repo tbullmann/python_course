@@ -15,4 +15,3 @@ for row_index in range(n):
     values.append(row)
 
 print(values)
-

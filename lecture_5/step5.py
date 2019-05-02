@@ -42,9 +42,6 @@ class dotplot(alignement):
                     self.values[i][j] = self.values[i-1][j-1] + 1
 
 
-
-
-
 values = dotplot(seq1, seq2)
 values.fill()
 values.show()

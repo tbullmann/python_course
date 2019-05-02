@@ -24,9 +24,6 @@ class alignement(matrix):
         matrix.__init__(self, len(seq1) + 1, len(seq2) + 1)
 
 
-
-
-
 values = alignement(seq1, seq2)
 values.show()
 

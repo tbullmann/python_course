@@ -19,7 +19,6 @@ class matrix():
             print()
 
 
-
 values = matrix(m,n)
 values.show()
 

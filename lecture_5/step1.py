@@ -17,5 +17,6 @@ def show(values, n, m):
             print("{:4d}".format(values[i][j]), end='')
         print()
 
+
 values = init(m,n)
 show(values, m, n)

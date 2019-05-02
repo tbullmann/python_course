@@ -14,4 +14,3 @@ for row_index in range(n):
     for column_index in range(m):
         print("{:4d}".format(values[row_index][column_index]), end='')
     print()
-
